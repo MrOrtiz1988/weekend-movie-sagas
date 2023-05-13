@@ -17,9 +17,10 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
-                            <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
+                        <div className='movieList-div' key={movie.id} >
+                            <img className='movieList-images' src={movie.poster} alt={movie.title} />
+                            <h2>{movie.title}</h2>
+                            <p>{movie.description}</p>
                         </div>
                     );
                 })}
