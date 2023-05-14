@@ -9,8 +9,17 @@ function MovieList() {
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
-        dispatch({ type: 'FETCH_GENRES' });
     }, []);
+
+    const sendToDetails = (movie) => {
+        dispatch({
+            type: 'SET_DETAILS',
+            payload: movie
+        })
+
+        dispatch({ type: 'FETCH_GENRES', payload: 1 });
+
+    }
 
     return (
         <main>
@@ -19,7 +28,7 @@ function MovieList() {
                 {movies.map(movie => {
                     return (
                         <div className='movieList-div' key={movie.id} >
-                            <img className='movieList-images' src={movie.poster} alt={movie.title} />
+                            <img onClick={() => sendToDetails(movie)} className='movieList-images' src={movie.poster} alt={movie.title} />
                             <h2>{movie.title}</h2>
                             <p>{movie.description}</p>
                         </div>
