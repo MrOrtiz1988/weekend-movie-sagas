@@ -8,7 +8,7 @@ function MovieDetails () {
     const history = useHistory();
 
     const backtButton = () => {
-        history.push('/')
+        history.push('/');
     }
 
     return (

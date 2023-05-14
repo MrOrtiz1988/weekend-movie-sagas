@@ -15,11 +15,11 @@ function MovieList() {
 
     const sendToDetails = (movie, id) => {
 
-        dispatch({ type: 'SET_DETAILS', payload: movie })
+        dispatch({ type: 'SET_DETAILS', payload: movie });
 
         dispatch({ type: 'FETCH_GENRES', payload: id });
 
-        history.push('/details')
+        history.push('/details');
 
     }
 
@@ -29,8 +29,8 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
-                            <h2>{movie.title}</h2>
+                        <div className='movie-div' key={movie.id} >
+                            <h3>{movie.title}</h3>
                             <img
                                 onClick={() => sendToDetails(movie, movie.id)}
                                 src={movie.poster}
