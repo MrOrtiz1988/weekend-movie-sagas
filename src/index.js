@@ -66,6 +66,7 @@ const genres = (state = [], action) => {
     }
 }
 
+//Used to store a single movie after its click 
 const movieDetails = (state = [], action) => {
     switch (action.type) {
         case 'SET_DETAILS':

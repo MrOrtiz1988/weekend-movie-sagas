@@ -20,10 +20,8 @@ if (process.env.DATABASE_URL) {
 else {
     pool = new pg.Pool({
         host: 'localhost',
-        port: 3000,
-        database: 'saga_movies_weekend',
-        user: 'postgres',
-        password: 'Gambino20' 
+        port: 5432,
+        database: 'saga_movies_weekend'
     });
 }
 

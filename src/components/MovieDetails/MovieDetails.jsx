@@ -2,9 +2,10 @@ import { useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 function MovieDetails () {
-
-    const theMovie = useSelector(store => store.movieDetails)
-    const movieGenres = useSelector(store => store.genres)
+    //theMovie has the data of the movie that was stored after image was clicked
+    const theMovie = useSelector(store => store.movieDetails);
+    //movieGenres contains the genres we get from the database for that exact movie id
+    const movieGenres = useSelector(store => store.genres);
     const history = useHistory();
 
     const backtButton = () => {
