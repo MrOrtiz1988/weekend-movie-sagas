@@ -79,3 +79,15 @@ VALUES
 (12,6), (12,3),           -- Social Net
 (13,6), (13,10), (13,1),  -- Titanic
 (14,1), (14,2), (14,4);   -- Toy Story
+
+SELECT genres.name AS genre_name
+FROM genres 
+JOIN movies_genres ON movies_genres.genre_id = genres.id
+JOIN movies ON movies.id = movies_genres.movie_id
+WHERE movies.title = 'Avatar';
+
+SELECT genres.name AS genre_name
+FROM genres 
+JOIN movies_genres ON movies_genres.genre_id = genres.id
+JOIN movies ON movies.id = movies_genres.movie_id
+WHERE movies.id = 1;
